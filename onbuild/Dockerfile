@@ -1,8 +1,8 @@
 # VERSION           0.0.1
 # DOCKER-VERSION    1.2.0
 
-FROM gbleux/haraka:latest
-MAINTAINER Gordon Bleux <gordon.bleux+dh@gmail.com> (@gbleux)
+FROM hasufell/gentoo-haraka:latest
+MAINTAINER Julian Ospald <hasufell@posteo.de>
 
 # copy everything as we cannot guarantee, that package.json, docs,
 # plugins or config is present. use .dockerignore to exclude other

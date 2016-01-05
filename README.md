@@ -21,14 +21,14 @@ The following versions are used:
 The Docker container will be provisioned with the content of the directory
 of the Dockerfile. Haraka is only interested in three directories:
 
-* docs  
+* docs
   Documentation for plugins.
-* config  
+* config
   Configuration files for Haraka and its plugins
-* plugins  
+* plugins
   Haraka plugins in addition to the built-ins.
 
-At least the plugin configuration (*config/plugins*) and host list 
+At least the plugin configuration (*config/plugins*) and host list
 (*config/host_list*) should be present for Haraka to function properly.
 
 If the plugins have any third-party dependencies, a *package.json* file
@@ -52,7 +52,7 @@ Once this is done, a new Docker image can be created:
 
 ### onbuild
 
-With the custom Haraka configuration (_config_), plugins (_pluins_) and 
+With the custom Haraka configuration (_config_), plugins (_pluins_) and
 documentation (_docs_) in place, the Dockerfile must only inherit from
 **gbleux/haraka**. The current directory will be [copied][COPY] into the
 container [upon build][ONBUILD] time. Any dependencies specified in
@@ -95,7 +95,7 @@ The container provides two [volumes][VOLUME]:
 * **/data**
     + Contains any data created during runtime
     + Out of the box, only the outbound queue is stored there
-    + Plugins can use this directory to share data with  
+    + Plugins can use this directory to share data with
       the host or other containers
 
 When mounting the volumes, the write permissions for the Haraka user

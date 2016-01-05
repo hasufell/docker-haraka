@@ -103,7 +103,7 @@ exec_haraka() {
     haraka_bootstrap || exit 2
 
     # tee outout so 'docker logs' and 'tail -f $LOG_VOLUME/haraka.log' works
-    exec "$HARAKA_BIN" "$@" 2>&1 | tee "$HARAKA_LOGS/$HARAKA_LOG"
+    exec "$HARAKA_BIN" -c /app/config "$@" 2>&1 | tee "$HARAKA_LOGS/$HARAKA_LOG"
 }
 
 exec_help() {

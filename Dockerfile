@@ -1,8 +1,8 @@
 # VERSION           0.0.4
 # DOCKER-VERSION    1.2.0
 
-FROM node:0.10
-MAINTAINER Gordon Bleux <gordon.bleux+dh@gmail.com> (@gbleux)
+FROM hasufell/gentoo-nodejs:4.1
+MAINTAINER Julian Ospald <hasufell@posteo.de>
 
 ENV HARAKA_HOME /app
 ENV HARAKA_LOGS /logs
@@ -23,7 +23,7 @@ RUN groupadd -r haraka && \
 
 # node-gyp emits lots of warnings if HOME is set to /
 ENV HOME /tmp
-ENV HARAKA_VERSION 2.5.0
+ENV HARAKA_VERSION 2.7.0
 RUN npm install -g "Haraka@$HARAKA_VERSION"
 RUN haraka --install "$HARAKA_HOME"
 
